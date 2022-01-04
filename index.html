@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Page-Enter" content="progid:DXImageTransform.Microsoft.Fade(duration=1)">
+    <meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(duration=1)">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="Stylesheet" href="style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>NNB 520</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="counterup.js"></script>
+    <script type="text/javascript" src="timroi.js"></script>
+    <script language="javascript">
+
+        title_tmp1 = document.title
+
+        if (title_tmp1.indexOf(">>") != -1) {
+
+            title_tmp2 = title_tmp1.split(">>");
+
+            title_last = "*~*" + title_tmp2[1];
+
+            title_last = title_last + "*~*" + title_tmp2[2];
+
+        } else {
+
+            if (title_tmp1.indexOf("*~*") != -1) {
+
+                title_tmp2 = title_tmp1.split("*~*");
+
+                title_last = "*~*" + title_tmp2[1];
+
+                if (title_last == "*~*") { title_last = "*~*" };
+
+                if (title_last == "*~*") { title_last = "*~*" };
+
+            }
+
+            else { title_last = " Love you so much... " }
+
+        }
+
+        title_new = "" + title_last + ""
+
+        step = 0
+
+        function flash_title() {
+
+            step++
+
+            if (step == 8) { step = 1 }
+
+            if (step == 1) { document.title = '[~~~~*' + title_new + '*~~~~]' }
+
+            if (step == 2) { document.title = '[~~~*~' + title_new + '-*~~~]' }
+
+            if (step == 3) { document.title = '[~~*~~' + title_new + '~~*~~]' }
+
+            if (step == 4) { document.title = '[~*~~~' + title_new + '~~~*~]' }
+
+            if (step == 5) { document.title = '[~~*~~' + title_new + '~~*~~]' }
+
+            if (step == 6) { document.title = '[~~~*~' + title_new + '~*~~~]' }
+
+            if (step == 7) { document.title = '[~~~~*' + title_new + '*~~~~]' }
+
+            setTimeout("flash_title()", 180);
+
+        }
+
+        flash_title();
+
+        function scrollToBottom(elm_id) {
+            var elm = document.getElementById(elm_id);
+            try {
+                elm.scrollTop = elm.scrollHeight;
+            }
+            catch (e) {
+                var f = document.createElement("input");
+                if (f.setAttribute) f.setAttribute("type", "text")
+                if (elm.appendChild) elm.appendChild(f);
+                f.style.width = "0px";
+                f.style.height = "0px";
+                if (f.focus) f.focus();
+                if (elm.removeChild) elm.removeChild(f);
+            }
+        }
+
+    </script>
+
+</head>
+
+<body onload="javascript:teclear();">
+    <div id="TextCounter">
+        <strong>I</strong>
+        <img src="heartr.png" />
+        <strong>U</strong> <span id="counter">
+            <script type="text/javascript">
+                // January: tháng 1
+                // February: tháng 2
+                // March: tháng 3
+                // April: tháng 4
+                // May: tháng 5
+                // June: tháng 6
+                // July: tháng 7
+                // August: tháng 8
+                // September: tháng 9
+                // October: tháng 10
+                // November: tháng 11
+                // December: tháng 12
+                new CountUp('aug 10 2021 00:01:00', 'counter', "...  ");
+            </script>
+        </span>
+    </div>
+    <div id="BgContent">
+        <div id="copyright">
+            Dear: My Princess
+        </div>
+        <div id="TextContent">
+        </div>
+        <div id="MusicPlayer">
+            <iframe src="https://open.spotify.com/track/55n9yjI6qqXh5F2mYvUc2y?si=2a20cd04eed24308" width="0" height="0"
+                frameborder="0" allowfullscreen></iframe><br />
+        </div>
+    </div>
+    <div id="canvas">
+    </div>
+    <script type="text/javascript" src="protoclass.js"></script>
+    <script type="text/javascript" src="box2d.js"></script>
+    <script type="text/javascript" src="Main.js"></script>
+    <script language="javascript" type="text/javascript">
+        mensaje =
+            '<font size="5" face="Indie Flower" color="#fff">To the most beautiful girl in the world...<br></font>' + ' <br>' +
+
+            '<font color="#fff" face="Indie Flower" size="4">I am the luckiest to have you in my life.</font><br>' +
+
+            '<font color="#fff" face="Indie Flower" size="4">I love you, and may you never forget that.</font><br>' +
+
+            '<font size="4" face="Indie Flower" color="#fff">Every day I love you more than the last.</font><br>' +
+
+            '<font size="4" face="Indie Flower" color="#fff">Thank you for bringing nothing but joy to my world.</font>  <br>' +
+
+            '<font size="4" face="Indie Flower" color="#fff">Thinking of you, loving you, and hoping you know if you need anything, I’m always here for you.</font>' + '<br>' +
+
+            '<p align="left"> <font face="Indie Flower" color="#fff" size="5">Love you so much <3 <3 <3 </font></p>';
+        line = 0;
+        cursor = '_';
+        function teclear() {
+            if (line == mensaje.length) cursor = '';
+            document.getElementById('TextContent').innerHTML = mensaje.substring(0, line) + cursor;
+            var objDiv = document.getElementById("TextContent");
+            objDiv.scrollTop = objDiv.scrollHeight;
+            if (line++ < mensaje.length) setTimeout("teclear()", 60);
+        }
+    </script>
+</body>
+
+</html>
